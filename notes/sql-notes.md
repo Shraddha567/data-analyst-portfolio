@@ -1,0 +1,2 @@
+# SQL Notes
+SELECT, WHERE, ORDER BY, GROUP BY, HAVING, JOINs, Window Functions.
