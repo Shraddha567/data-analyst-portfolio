@@ -1,0 +1,1 @@
+SELECT * FROM orders WHERE discount_percent = 20;

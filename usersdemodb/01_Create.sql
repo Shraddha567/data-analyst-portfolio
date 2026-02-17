@@ -11,7 +11,7 @@ SELECT name, email FROM employee;
 -- For email NOT NULL Constraint Ensures that a column cannot contain NULL values.
 RENAME TABLE users TO employee;
 RENAME TABLE employee TO users;
--- Filtering Rows with WHERE
+-- Filtering Rows with WHEREusers
 -- Equal To - Not Equal To
 -- SELECT column1, column2 FROM table_name;
 SELECT * FROM users;
