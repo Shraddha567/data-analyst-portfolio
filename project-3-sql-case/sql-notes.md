@@ -21,11 +21,6 @@ Install MySQL Workbench (optional but helpful GUI).
 Linux (Ubuntu) Installation
 
 Follow these steps to install MySQL and create a user:
-1.
-2.
-3.
-4. 
-
 Step 1: Update Package Index
 Step 2: Install MySQL Server
 Step 3: Secure the Installation
@@ -267,20 +262,26 @@ SET gender = 'Other'
 WHERE name = 'Ishaan';
 UPDATE users
 SET salary = 50000;
+
 DELETE - Removing Data from a Table
 The DELETE statement removes rows from a table.
 Basic Syntax
 Example: Delete One Row
+
 Delete Multiple Rows
 Delete All Rows (but keep table structure)
 Drop the Entire Table (use with caution)
 DELETE FROM table_name
 WHERE condition;
+
 DELETE FROM users
 WHERE id = 3;
+
 DELETE FROM users
 WHERE gender = 'Other';
+
 DELETE FROM users;
+
 DROP TABLE users;
 This removes the table structure and all data permanently.
 Best Practices
@@ -289,8 +290,8 @@ Consider running a SELECT with the same WHERE clause first to confirm what
 will be affected:
 Always back up important data before performing destructive operations.
 Quick Quiz: Practice Your DELETE Skills
+
 what will happen if you run these queries?
-•
 •
 SELECT * FROM users WHERE id = 3;
 •
@@ -510,27 +511,18 @@ Example:
 How Is PRIMARY KEY Different from UNIQUE ?
 At first glance, PRIMARY KEY and UNIQUE might seem similar since both prevent
 duplicate values. But there are important differences:
-•
-•
-•
-•
-•
-•
+
 CREATE TABLE users (
 id INT AUTO_INCREMENT PRIMARY KEY,
  name VARCHAR(100)
 );
 Feature PRIMARY KEY UNIQUE
-Must be
-unique
-Yes Yes
-Allows NULL
-values
-No
+Must be unique Yes
+Allows NULL values - No
 Yes (one or more NULLs
 allowed)
-How many
-allowed
+
+How many allowed
 Only one per table Can have multiple
 Required by
 table
@@ -550,11 +542,13 @@ id INT AUTO_INCREMENT PRIMARY KEY,
  name VARCHAR(100)
 );
 •
-•
+
 ALTER TABLE users DROP PRIMARY KEY;
+
 This may fail if the primary key is being used elsewhere (like in a foreign key
 or auto_increment column).
 To drop a UNIQUE constraint:
+
 Auto Increment
 In MySQL, a PRIMARY KEY is often used with the AUTO_INCREMENT attribute to
 automatically generate unique values for new rows.
@@ -573,19 +567,17 @@ id INT AUTO_INCREMENT PRIMARY KEY,
  name VARCHAR(100)
 );
 ALTER TABLE users AUTO_INCREMENT = 1000;
-•
-•
-• 
-Foreign Keys in MySQL
+
+• Foreign Keys in MySQL
 A foreign key is a column that creates a link between two tables. It ensures that
 the value in one table must match a value in another table.
 This is used to maintain data integrity between related data.
 Why Use Foreign Keys?
 Imagine this scenario:
-You have a users table. Now you want to store each user’s address. Instead of
-putting address columns inside the users table, you create a separate
-addresses table, and link it to users using a foreign key.
+You have a users table. Now you want to store each user’s address. Instead of putting address columns inside the users table, you create a separate addresses table, and link it to users using a foreign key.
+
 Creating a Table with a Foreign Key
+
 Let’s create an addresses table where each address belongs to a user.
 CREATE TABLE addresses (
 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -606,22 +598,26 @@ To drop it:
 Adding a Foreign Key Later (Using ALTER)
 Suppose the foreign key was not defined during table creation. You can add it
 later using ALTER TABLE :
-•
-•
-•
 CREATE TABLE addresses (
 id INT AUTO_INCREMENT PRIMARY KEY,
  user_id INT,
  CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
 ALTER TABLE addresses
+
 DROP FOREIGN KEY fk_user;
+
 ALTER TABLE addresses
+
 ADD CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id);
+
 Adding ON DELETE Action
+
 By default, if you delete a user that has related addresses, MySQL will throw an
 error. You can control this behavior with ON DELETE .
 Example with ON DELETE CASCADE :
+
 If you want addresses to be automatically deleted when the user is deleted:
 Or alter it later:
 Other ON DELETE Options
@@ -648,10 +644,7 @@ Foreign keys connect tables and enforce valid references.
 You can create them inline or with ALTER TABLE .
 You can drop them by name.
 Use ON DELETE to control what happens when the parent row is deleted.
-•
-•
-•
-• 
+
 SQL JOINs in MySQL
 In SQL, JOINs are used to combine rows from two or more tables based on related
 columns — usually a foreign key in one table referencing a primary key in another.
@@ -735,8 +728,7 @@ SELECT statements. It removes duplicates by default.
 If you want to include all rows including duplicates, use UNION ALL .
 Example Scenario
 You already have a users table for active users. Now, we’ll create an
-admin_users table to store users who are administrators or have special roles. We
-will then combine the names from both tables using UNION .
+admin_users table to store users who are administrators or have special roles. We will then combine the names from both tables using UNION .
 Step 1: Create the admin_users Table
 CREATE TABLE admin_users (
 id INT PRIMARY KEY,
@@ -750,11 +742,13 @@ Step 2: Insert Sample Data into admin_users
 Step 3: Use UNION to Combine Data
 Let’s combine the active and admin user names.
 This returns a single list of unique names from both tables.
+
 UNION ALL Example
 If you want to keep duplicate names (if any), use UNION ALL .
 Using More Than One Column
 You can also select multiple columns as long as both SELECT queries return the
 same number of columns with compatible types.
+
 INSERT INTO admin_users (id, name, email, gender, date_of_birth, salary) VALUES
 (101, 'Anil Kumar', 'anil@example.com', 'Male', '1985-04-12', 60000),
 (102, 'Pooja Sharma', 'pooja@example.com', 'Female', '1992-09-20', 58000),
@@ -768,6 +762,7 @@ UNION ALL
 SELECT name FROM admin_users;
 Adding separate roles
 Using Order By with UNION
+
 Rules of UNION
 The number of columns and their data types must match in all SELECT
 statements.
@@ -783,37 +778,34 @@ SELECT name FROM users
 UNION
 SELECT name FROM admin_users
 ORDER BY name;
-1.
-2.
-3. 
+
 When to Use UNION
-When you have two similar tables (like current and archived data).
-When you need to combine filtered results (e.g., high-salary users from two
+1) When you have two similar tables (like current and archived data).
+2) When you need to combine filtered results (e.g., high-salary users from two
 sources).
-When performing cross-category reporting.
+3) When performing cross-category reporting.
 Summary
 Operator Behavior
 UNION Combines results, removes duplicates
 UNION ALL Combines results, keeps duplicates
 •
-•
-• 
 Self JOIN in MySQL
 A Self JOIN is a regular join, but the table is joined with itself.
 This is useful when rows in the same table are related to each other. For example,
 when users refer other users, and we store the ID of the person who referred them
 in the same users table.
+
 Step 1: Add a referred_by_id Column
 We’ll extend the existing users table to include a column called referred_by_id ,
 which holds the id of the user who referred them.
 This column:
 Will be NULL for users who were not referred.
 Will contain the id of another user who referred them.
+
 Step 2: Insert Referral Data (Optional)
 Assuming id = 1 is the first user, and referred others:
 ALTER TABLE users
 ADD COLUMN referred_by_id INT;
-•
 •
 UPDATE users SET referred_by_id = 1 WHERE id IN (2, 3); -- User 1 referred Users 2
 and 3
@@ -821,6 +813,7 @@ UPDATE users SET referred_by_id = 2 WHERE id = 4; -- User 2 referred User 4
 Step 3: Use a Self JOIN to Get Referrer Names
 We want to get each user’s name along with the name of the person who referred
 them.
+
 Explanation:
 a refers to the user being queried.
 b refers to the user who referred them.
@@ -832,21 +825,20 @@ id user_name referred_by
 2 Sneha Aarav
 3 Raj Aarav
 4 Fatima Sneha
+
 Summary
 Use Self JOIN when you need to join a table with itself.
 In referral-based relationships, store the referrer’s id in the same table.
+
 SELECT
  a.id,
  a.name AS user_name,
  b.name AS referred_by
 FROM users a
 INNER JOIN users b ON a.referred_by_id = b.id;
-•
-•
-•
-•
-• 
+
 • Use aliases like a and b to differentiate the two instances of the same table.
+
 MySQL Views
 A view in MySQL is a virtual table based on the result of a SELECT query. It does
 not store data itself — it always reflects the current data in the base tables.
@@ -855,13 +847,11 @@ You want to simplify complex queries
 You want to reuse logic
 You want to hide certain columns from users
 You want a “live snapshot” of filtered data
+
 Creating a View
 Suppose we want a view that lists all users earning more than ₹70,000.
 Querying the View
 This will return all users from the users table where salary is above ₹70,000.
-•
-•
-•
 •
 CREATE VIEW high_salary_users AS
 SELECT id, name, salary
@@ -889,6 +879,8 @@ UPDATE users
 SET salary = 72000
 WHERE name = 'Raj';
 SELECT * FROM high_salary_users;
+
+
 Dropping a View
 To remove a view:
 Summary
@@ -898,9 +890,6 @@ Changes to base tables are reflected automatically
 Great for simplifying complex queries or creating filtered access
 DROP VIEW high_salary_users;
 •
-•
-•
-• 
 MySQL Indexes
 Indexes in MySQL are used to speed up data retrieval. They work like the index of
 a book — helping the database engine find rows faster, especially for searches,
@@ -909,15 +898,16 @@ Viewing Indexes on a Table
 To see the indexes on a table, use:
 This shows all the indexes currently defined on the users table, including the
 automatically created primary key index.
+
 Creating a Single-Column Index
 Suppose you’re frequently searching users by their email . You can speed this up
 by indexing the email column.
+
 What this does:
 Creates an index named idx_email
 Improves performance of queries like:
 SHOW INDEXES FROM users;
 CREATE INDEX idx_email ON users(email);
-•
 •
 SELECT * FROM users WHERE email = 'example@example.com';
 Important Notes
@@ -926,16 +916,14 @@ Indexes slow down INSERT , UPDATE , and DELETE operations slightly
 (because the index must be updated)
 Use indexes only when needed (i.e., for columns used in WHERE , JOIN ,
 ORDER BY )
+
 Creating a Multi-Column Index
-If you often query users using both gender and salary , a multi-column index is
-more efficient than separate indexes.
+If you often query users using both gender and salary , a multi-column index is more efficient than separate indexes.
 Usage Example:
 This query can take advantage of the combined index on gender and salary .
 Index Order Matters
 For a multi-column index on (gender, salary) :
 This works efficiently:
-•
-•
 •
 CREATE INDEX idx_gender_salary ON users(gender, salary);
 SELECT * FROM users
@@ -946,6 +934,7 @@ But this may not use the index effectively:
 Because the first column in the index ( gender ) is missing in the filter.
 Dropping an Index
 To delete an index:
+
 Summary
 Feature Description
 SHOW INDEXES View current indexes on a table
@@ -956,6 +945,7 @@ Avoid on Columns that are rarely queried or always unique
 •
 WHERE salary > 70000
 DROP INDEX idx_email ON users;
+
 Subqueries in MySQL
 A subquery is a query nested inside another query. Subqueries are useful for
 breaking down complex problems into smaller parts.
@@ -963,16 +953,17 @@ They can be used in:
 SELECT statements
 WHERE clauses
 FROM clauses
+
 Example Scenario: Salary Comparison
 Suppose we want to find all users who earn more than the average salary of all
 users.
+
 Scalar Subquery Example
 This subquery returns a single value — the average salary — and we compare each
 user’s salary against it.
+
 Explanation:
 The inner query: SELECT AVG(salary) FROM users returns the average salary.
-•
-•
 •
 SELECT id, name, salary
 FROM users
@@ -980,10 +971,12 @@ WHERE salary > (
  SELECT AVG(salary) FROM users
 );
 • 
+
 The outer query selects all users with a salary greater than that average.
 Subquery with IN
 Now let’s say we want to find users who have been referred by someone who earns
 more than ₹75,000.
+
 Explanation:
 The inner query: SELECT id FROM users WHERE salary > 75000 returns a list
 of user IDs (referrers) who earn more than ₹75,000.
@@ -992,6 +985,7 @@ Other Places Subqueries Are Used
 You can also use subqueries:
 Inside SELECT columns (called scalar subqueries)
 In the FROM clause to create derived tables
+
 Example in SELECT :
 This shows each user’s salary along with the overall average.
 •
@@ -1000,9 +994,6 @@ FROM users
 WHERE referred_by_id IN (
  SELECT id FROM users WHERE salary > 75000
 );
-•
-•
-•
 •
 SELECT name, salary,
 (SELECT AVG(salary) FROM users) AS average_salary
@@ -1015,12 +1006,13 @@ Subquery in SELECT Shows related calculated value
 Subquery in FROM Acts as a virtual table
 Subqueries are powerful tools when filtering based on computed or dynamic
 conditions.
+
 GROUP BY and HAVING in MySQL
 The GROUP BY clause is used to group rows that have the same values in
 specified columns. It is typically used with aggregate functions like COUNT , SUM ,
 AVG , MIN , or MAX .
-The HAVING clause is used to filter groups after aggregation — similar to how
-WHERE filters individual rows.
+
+The HAVING clause is used to filter groups after aggregation — similar to how WHERE filters individual rows.
 Example Table: users
 Assume this is your users table:
 id name gender salary referred_by_id
@@ -1029,7 +1021,9 @@ id name gender salary referred_by_id
 3 Raj Male 72000 1
 4 Fatima Female 85000 2
 5 Priya Female 70000 NULL
+
 GROUP BY Example: Average Salary by Gender
+
 SELECT gender, AVG(salary) AS average_salary
 FROM users
 GROUP BY gender;
@@ -1037,6 +1031,7 @@ Explanation:
 This groups users by gender.
 Then calculates the average salary for each group.
 GROUP BY with COUNT
+
 Find how many users were referred by each user:
 Output:
 referred_by_id total_referred
@@ -1055,25 +1050,24 @@ SELECT gender, AVG(salary) AS avg_salary
 FROM users
 GROUP BY gender
 HAVING AVG(salary) > 75000;
+
 Why not WHERE ?
 WHERE is used before grouping.
 HAVING is used after groups are formed — it’s the only way to filter
 aggregated values.
 Another Example: Groups with More Than 1 Referral
+
 Summary
 Clause Purpose
-Can use
-aggregates?
+Can use aggregates?
 WHERE Filters rows before grouping No
-GROUP
-BY
-Groups rows based on column values N/A
+GROUP BY - Groups rows based on column values N/A
 HAVING Filters groups after aggregation Yes
 Use GROUP BY to organize data, and HAVING to filter those groups based on
 aggregate conditions.
+
 ROLLUP
 To get subtotals and grand totals, you can use ROLLUP :
-•
 •
 SELECT referred_by_id, COUNT(*) AS total_referred
 FROM users
@@ -1101,12 +1095,15 @@ After the procedure is created, we reset the delimiter back to ; .
 DELIMITER $$
 CREATE PROCEDURE procedure_name()
 BEGIN
+
 -- SQL statements go here
 END$$
 DELIMITER ;
+
 Creating a Procedure with Input Parameters
 Let’s say you want to create a stored procedure that inserts a new user into the
 users table.
+
 Example:
 This creates a procedure named AddUser that accepts five input parameters.
 Calling the Procedure
@@ -1151,13 +1148,11 @@ Enforcing additional business rules
 Automatically updating related data
 Basic Trigger Structure
 Triggers can be fired:
-BEFORE or AFTER an event
-On INSERT , UPDATE , or DELETE
+BEFORE or AFTER an event On INSERT , UPDATE , or DELETE
 Scenario: Log Every New User Insertion
 Suppose we want to log every time a new user is inserted into the users table.
+
 We’ll create a separate table called user_log to store log entries.
-•
-•
 •
 CREATE TRIGGER trigger_name
 AFTER INSERT ON table_name
@@ -1190,8 +1185,6 @@ BEGIN
 END$$
 DELIMITER ;
 •
-•
-• 
 Step 3: Test the Trigger
 Now check the user_log table:
 You should see Ritika’s info automatically logged.
@@ -1208,6 +1201,7 @@ OLD.column Refers to the old row (for UPDATE , DELETE )
 FOR EACH ROW Executes for each affected row
 CALL AddUser('Ritika Jain', 'ritika@example.com', 'Female', '1996-03-12', 74000);
 SELECT * FROM user_log;
+
 DROP TRIGGER IF EXISTS after_user_insert;
 More on MySQL
 This section covers some essential MySQL features and operators that help you
@@ -1224,16 +1218,17 @@ true
 gender = 'Male' OR gender =
 'Other'
 NOT Reverses a condition NOT gender = 'Female'
+
 2. Add a Column to an Existing Table
 Use ALTER TABLE to add a column:
 This adds a new column named city to the users table.
 ALTER TABLE users
 ADD COLUMN city VARCHAR(100);
+
 3. Wildcard Operators
 Wildcards are used with the LIKE operator for pattern matching in text.
 Wildcard Description Example
-%
-Matches any
+% Matches any
 sequence
 WHERE name LIKE 'A%' (starts with A)
 _
@@ -1241,12 +1236,14 @@ Matches a single
 character
 WHERE name LIKE '_a%' (second letter
 is ‘a’)
+
 4. LIMIT with OFFSET
 LIMIT is used to limit the number of rows returned. OFFSET skips a number of
 rows before starting to return rows.
 This skips the first 10 rows and returns the next 5.
 Alternative syntax:
 This also skips 10 and returns 5 (syntax: LIMIT offset, count ).
+
 5. DISTINCT Keyword
 DISTINCT is used to return only unique values.
 SELECT * FROM users
@@ -1256,10 +1253,12 @@ SELECT * FROM users
 ORDER BY id
 LIMIT 10, 5;
 Returns a list of unique gender values from the users table.
+
 6. TRUNCATE Keyword
 TRUNCATE removes all rows from a table, but keeps the table structure.
 Faster than DELETE FROM users
 Cannot be rolled back (unless in a transaction-safe environment)
+
 7. CHANGE vs MODIFY Column
 Both CHANGE and MODIFY are used to alter existing columns in a table, but they
 work slightly differently.
@@ -1269,7 +1268,6 @@ MODIFY: Only change datatype
 This changes only the datatype of salary .
 SELECT DISTINCT gender FROM users;
 TRUNCATE TABLE users;
-•
 •
 ALTER TABLE users
 CHANGE COLUMN city location VARCHAR(150);
