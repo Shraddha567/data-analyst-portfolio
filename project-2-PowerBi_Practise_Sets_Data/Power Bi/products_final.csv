@@ -1,0 +1,21 @@
+productCode,productName,productLine,productScale,productVendor,quantityInStock,buyPrice,MSRP
+P1,Product P1,Classic Cars,1:24,Vendor 9,3907,471.1,695.34
+P2,Product P2,Classic Cars,1:18,Vendor 6,2184,1932.36,2335.89
+P3,Product P3,Classic Cars,1:10,Vendor 4,368,1695.94,2409.02
+P4,Product P4,Planes,1:10,Vendor 7,3383,1328.14,2022.36
+P5,Product P5,Motorcycles,1:24,Vendor 5,3519,67.11,130.57
+P6,Product P6,Motorcycles,1:12,Vendor 10,4367,356.73,505.41
+P7,Product P7,Motorcycles,1:18,Vendor 6,4338,1907.11,3318.05
+P8,Product P8,Planes,1:24,Vendor 7,4712,1484.68,2921.87
+P9,Product P9,Motorcycles,1:12,Vendor 7,671,1629.36,3089.58
+P10,Product P10,Trucks,1:50,Vendor 4,3342,1150.74,1521.89
+P11,Product P11,Ships,1:18,Vendor 3,1989,1010.55,1966.88
+P12,Product P12,Motorcycles,1:18,Vendor 7,3909,1178.95,2940.66
+P13,Product P13,Trucks,1:12,Vendor 9,2026,701.8,1551.48
+P14,Product P14,Motorcycles,1:24,Vendor 6,2185,454.19,822.96
+P15,Product P15,Classic Cars,1:12,Vendor 3,2990,685.81,1688.17
+P16,Product P16,Planes,1:10,Vendor 10,4835,192.5,478.88
+P17,Product P17,Planes,1:10,Vendor 2,1718,710.84,950.14
+P18,Product P18,Motorcycles,1:32,Vendor 6,3424,762.79,1291.07
+P19,Product P19,Trucks,1:32,Vendor 9,920,255.95,591.8
+P20,Product P20,Trucks,1:24,Vendor 6,2556,1232.71,2447.82

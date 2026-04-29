@@ -1,0 +1,101 @@
+orderNumber,orderDate,requiredDate,shippedDate,status,comments,customerNumber
+1,2026-01-21,2026-02-19,,Shipped,Human weight so section international produce.,5
+2,2025-09-14,2026-04-08,2025-11-05,Cancelled,,37
+3,2025-09-30,2026-05-16,,Disputed,Growth move rest level practice time somebody.,13
+4,2025-09-09,2026-05-25,2025-09-24,Pending,,7
+5,2025-10-05,2026-01-31,2025-12-27,Disputed,,4
+6,2025-09-10,2025-12-11,,Disputed,,11
+7,2026-02-15,2026-04-08,2026-04-07,Disputed,,29
+8,2026-04-17,2026-04-20,2026-04-19,Disputed,,14
+9,2025-10-24,2026-05-14,,Pending,Ok guess read chair performance.,46
+10,2025-09-21,2025-12-15,2025-12-03,Resolved,Buy necessary side reach contain product magazine wait.,14
+11,2026-02-06,2026-04-29,,Cancelled,,21
+12,2025-07-01,2026-05-19,2026-02-09,Pending,,11
+13,2025-05-27,2025-12-03,,Resolved,,5
+14,2025-06-03,2026-02-21,2025-07-01,Disputed,Reality fine change.,33
+15,2026-04-23,2026-05-22,2026-04-28,Disputed,,10
+16,2025-11-28,2026-04-04,,Disputed,At the lead.,26
+17,2025-10-18,2025-11-11,,Shipped,,41
+18,2025-09-07,2026-05-13,2025-09-26,Resolved,,1
+19,2026-02-16,2026-05-20,,Shipped,,18
+20,2025-07-05,2025-08-15,,Pending,,24
+21,2025-05-17,2026-03-13,,Disputed,Doctor something head lose industry bed large.,25
+22,2026-01-10,2026-04-05,,Disputed,Cell technology third.,4
+23,2026-04-01,2026-05-08,,Shipped,Ahead discuss specific see which.,29
+24,2025-07-01,2026-02-11,2025-12-31,Cancelled,,15
+25,2025-04-29,2025-08-05,2025-06-21,Disputed,Half fight organization meeting.,42
+26,2026-01-18,2026-04-05,,Shipped,Line hold level become purpose security.,32
+27,2026-02-27,2026-05-03,2026-03-31,Disputed,,23
+28,2025-05-23,2026-03-11,,Disputed,Cover that officer message everybody record.,8
+29,2026-01-12,2026-03-13,2026-01-22,Disputed,,12
+30,2026-03-19,2026-05-26,,Shipped,Pressure world continue so sit well.,11
+31,2025-06-23,2025-10-01,,Shipped,,25
+32,2025-06-12,2025-11-28,2025-08-27,Pending,Model long as unit different continue.,12
+33,2025-11-09,2026-01-25,2025-11-10,Shipped,,36
+34,2025-05-20,2025-12-14,2025-07-31,Pending,,40
+35,2025-06-26,2026-03-08,,Shipped,,21
+36,2025-08-15,2026-05-01,,Disputed,,42
+37,2025-05-20,2026-04-18,,Cancelled,,32
+38,2025-09-21,2026-05-18,2026-02-04,Shipped,,31
+39,2025-06-11,2025-12-26,2025-09-04,Cancelled,Sometimes central million bring best way sister door.,32
+40,2025-11-25,2026-03-10,,Disputed,,39
+41,2026-01-20,2026-05-24,2026-03-15,Pending,Understand else attention without.,28
+42,2026-01-11,2026-03-25,,Shipped,,3
+43,2025-09-19,2025-10-22,2025-10-04,Cancelled,Check bad black Mrs seat phone wear federal.,15
+44,2026-01-12,2026-04-22,,Cancelled,Hour glass third environmental business total imagine.,47
+45,2025-07-02,2025-09-11,2025-07-07,Shipped,,19
+46,2026-03-03,2026-03-15,2026-03-08,Pending,,18
+47,2025-10-29,2026-03-13,,Shipped,,36
+48,2025-12-21,2026-04-24,,Disputed,None sit learn every feeling who.,3
+49,2026-01-29,2026-04-18,,Cancelled,,6
+50,2025-09-08,2026-04-09,,Shipped,Health these decide education trial.,42
+51,2025-07-21,2026-05-09,,Cancelled,Growth professional tough statement.,1
+52,2025-08-07,2026-01-22,2025-09-24,Pending,,43
+53,2026-02-12,2026-03-22,,Shipped,,33
+54,2026-04-25,2026-04-27,2026-04-26,Disputed,Win seek everything drop.,25
+55,2025-08-15,2026-05-26,,Cancelled,,11
+56,2025-06-01,2026-05-23,,Shipped,Middle live contain could building most suggest.,47
+57,2025-11-10,2026-04-01,,Disputed,Second imagine by until store.,8
+58,2025-11-15,2025-12-02,2025-11-18,Resolved,,37
+59,2025-08-03,2026-04-29,2026-02-09,Shipped,Begin already result take our.,38
+60,2026-02-04,2026-05-05,2026-04-23,Disputed,,12
+61,2026-01-08,2026-02-19,2026-02-05,Disputed,Say without hard development these affect.,44
+62,2025-10-27,2026-05-08,,Pending,Same tonight industry test third.,32
+63,2025-09-04,2025-11-24,,Resolved,,4
+64,2025-06-26,2026-05-14,2026-01-10,Resolved,,18
+65,2025-08-30,2026-03-13,2026-01-23,Cancelled,,8
+66,2025-08-13,2025-12-24,2025-08-20,Cancelled,Rate bit term over.,48
+67,2025-08-08,2025-11-11,2025-08-16,Cancelled,Our want near detail.,34
+68,2026-01-05,2026-05-12,2026-01-15,Disputed,Have stage establish agreement according stop late some.,21
+69,2025-10-14,2026-03-20,,Shipped,,20
+70,2026-04-04,2026-04-18,,Resolved,,31
+71,2025-12-09,2026-03-19,2026-02-07,Cancelled,Soon discussion first evidence teach ok.,44
+72,2025-07-03,2026-04-11,2026-03-23,Disputed,,18
+73,2025-07-23,2026-01-14,2025-08-12,Cancelled,Even travel shake news.,5
+74,2025-05-26,2025-10-31,2025-07-26,Cancelled,,29
+75,2026-01-31,2026-02-24,2026-02-13,Shipped,Send current quite we bank.,23
+76,2025-08-02,2025-10-15,,Cancelled,,29
+77,2025-08-08,2025-09-23,,Disputed,,32
+78,2025-09-17,2025-10-30,2025-10-05,Pending,,39
+79,2025-12-13,2026-02-16,2026-01-27,Shipped,,8
+80,2026-02-18,2026-05-22,,Shipped,,36
+81,2025-09-09,2026-01-22,,Disputed,,34
+82,2025-11-06,2026-03-30,,Disputed,That white could.,46
+83,2025-10-06,2025-12-06,,Cancelled,,49
+84,2025-10-15,2025-12-27,,Disputed,,25
+85,2025-08-10,2025-12-22,2025-08-22,Resolved,,36
+86,2025-11-24,2026-02-28,2026-01-09,Disputed,,16
+87,2025-09-22,2026-04-23,2026-01-22,Resolved,,22
+88,2025-08-18,2025-08-24,,Disputed,Represent cost design today nation wide partner.,30
+89,2025-08-21,2026-05-07,2025-09-15,Resolved,Fly call break value expect fact.,26
+90,2025-07-08,2026-01-06,2025-10-12,Cancelled,,24
+91,2026-04-23,2026-05-13,,Pending,,36
+92,2025-07-24,2026-04-23,,Resolved,,46
+93,2026-04-16,2026-05-05,,Pending,,37
+94,2025-11-09,2026-03-11,,Disputed,Far Republican system strong.,23
+95,2025-11-29,2026-01-08,,Disputed,Student world turn occur already evidence maybe.,31
+96,2026-04-13,2026-05-08,2026-05-07,Cancelled,How part another start want idea.,15
+97,2026-03-08,2026-05-04,2026-03-22,Disputed,,38
+98,2026-03-10,2026-05-18,,Cancelled,Green check trade blood ok work.,15
+99,2025-08-17,2026-05-21,2025-11-12,Cancelled,,12
+100,2026-02-05,2026-02-16,2026-02-12,Cancelled,,9
